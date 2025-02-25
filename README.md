@@ -102,6 +102,7 @@ The Raspberry Pi 4 Model B was chosen for this project due to its performance an
 During implementation, a USB adapter with the RT5370 chipset was used to enhance wireless connectivity.
 
 **Why RT5370?**
+
 ✅ Developed by Ralink Technology – Known for strong OpenWRT compatibility.
 ✅ Supports IEEE 802.11n – Ensures reliable and consistent wireless performance.
 ✅ Easy Configuration & Community Support – Well-integrated into the OpenWRT ecosystem.
@@ -112,6 +113,7 @@ By leveraging the RT5370 chipset, this setup ensures stable wireless connectivit
 This project sets up OpenWRT on a Raspberry Pi 4 Model B for optimized network management, security, and connectivity.
 
 🔧 **Key Configurations**
+
 1️⃣**Core Network Settings**
 Loopback (loopback) – Assigns 127.0.0.1/8 for testing & troubleshooting.
 
@@ -126,17 +128,19 @@ DNS Servers – Uses Cloudflare (1.1.1.1) & Google (8.8.8.8) for fast and reliab
 VPN Client (vpnclient) – Connects via tun0 to encrypt traffic and enhance security.
 
 ✅ **Benefits**
+
 🚀 Optimized Traffic Management
 🌍 Reliable Internal & External Connectivity
 🔐 Enhanced Security with VPN Integration
 
 ![image](https://github.com/user-attachments/assets/ff518605-f41c-4bb0-8877-8862420306d9)
 
-#**Wireless configuration**
+# **Wireless configuration**
 
 This setup enhances wireless security and network flexibility on OpenWRT by utilizing multiple wireless devices and interfaces to act as an IoT firewall.
 
 🔐 **Key Configurations**
+
 1️⃣ **External Network Access**
 Connects to an external network for internet access.
 
@@ -153,6 +157,7 @@ Mode: Access Point (AP) –
 Creates a WPA2-protected local network named "IoT Firewall".
 
 ✅ **Benefits**
+
 🔒 Secure & Encrypted Connectivity
 🌍 Dual-Band Wi-Fi for Flexibility
 🛡️ Isolated Local Network for IoT Security
@@ -164,6 +169,7 @@ Creates a WPA2-protected local network named "IoT Firewall".
 This firewall setup secures network traffic while acting as an IoT firewall, protecting internal devices and ensuring stable connectivity.
 
 🔐 **Key Configurations**
+
 1️⃣ **Default Security Measures**
 SYN Flood Protection – Prevents DoS attacks.
 Traffic Policies –
@@ -184,6 +190,7 @@ LAN-to-WAN forwarding enabled, allowing internal devices to access the internet.
 
 4️⃣ **Essential Network Rules**
 Allows:
+
 **✅ DHCP renew
 ✅ ICMP ping
 ✅ IGMP (multicast)
@@ -278,6 +285,7 @@ cat << "EOF" >> /etc/sysupgrade.conf
 EOF
 
 ✅** Benefits**
+
 🔒 Secure & Private Internet Access
 🚀 Customizable VPN Configuration
 🔄 Auto-Reconnect on Connection Drops
@@ -311,6 +319,7 @@ Listening Address: 127.0.0.1:5053
 Logging: Enabled with verbosity level 1, logs stored at /var/log/https-dns-proxy.log
 
 🛡️**Benefits**
+
 ✅ Encrypted & Secure DNS Queries 🔒
 ✅ Prevents Unencrypted Requests 🚫
 ✅ Reliable & Backup DNS Resolution ⚡
@@ -342,7 +351,8 @@ Yoyo – Blocks general ad domains effectively.
 DNS Resolver: dnsmasq – A fast DNS forwarder and DHCP server that integrates with Adblock.
 Fetch Utility: uclient-fetch – A lightweight HTTP client for updating blocklists.
 
-✅** Benefits**
+✅**Benefits**
+
 🚀 Faster Browsing – Blocks unwanted ads & trackers.
 🔐 Improved Security – Prevents access to malicious domains.
 📡 Better Privacy – Reduces tracking & unwanted content.
@@ -366,6 +376,7 @@ Tracking IPs:
 **Load Balancing & Failover Support – Ensures IPv6 network stability.**
 
 ✅ **Benefits**
+
 🔄 Seamless Failover – Automatically switches between WAN connections.
 ⚡ Load Balancing – Distributes traffic across multiple WANs for better performance.
 🔗 Improved Network Stability – Tracks multiple ISPs for redundancy.
