@@ -204,6 +204,7 @@ Allows:
 This setup integrates a VPN into OpenWRT on the Raspberry Pi 4 Model B, ensuring secure and private internet access through a customized configuration file.
 
 📌 **Key Configurations**
+
 Custom VPN Configuration (custom_config)
 Uses /etc/openvpn/my-vpn.conf for custom VPN settings.
 Disabled by default (option enabled '0') for flexibility in customization.
