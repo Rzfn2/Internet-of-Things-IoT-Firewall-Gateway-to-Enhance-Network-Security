@@ -95,20 +95,20 @@ Starting this section, OpenWRT is provided with a pre-configured, web-based inte
 ![image](https://github.com/user-attachments/assets/85f2c5b8-2432-42c0-b511-c3a98eddaef6)
 
 
-
+#**Configuration and Requirements**  
 The Raspberry Pi 4 Model B was chosen for this project due to its performance and compatibility with OpenWRT.
 
 🔌 **USB Adapter Selection (RT5370 Chipset)**
 During implementation, a USB adapter with the RT5370 chipset was used to enhance wireless connectivity.
 
-Why RT5370?
+**Why RT5370?**
 ✅ Developed by Ralink Technology – Known for strong OpenWRT compatibility.
 ✅ Supports IEEE 802.11n – Ensures reliable and consistent wireless performance.
 ✅ Easy Configuration & Community Support – Well-integrated into the OpenWRT ecosystem.
 
 By leveraging the RT5370 chipset, this setup ensures stable wireless connectivity, seamless OpenWRT integration, and effective IoT firewall management.
 
-**Network configuration**
+#**Network configuration**
 This project sets up OpenWRT on a Raspberry Pi 4 Model B for optimized network management, security, and connectivity.
 
 🔧 **Key Configurations**
@@ -132,7 +132,7 @@ VPN Client (vpnclient) – Connects via tun0 to encrypt traffic and enhance secu
 
 ![image](https://github.com/user-attachments/assets/ff518605-f41c-4bb0-8877-8862420306d9)
 
-**Wireless configuration**
+#**Wireless configuration**
 
 This setup enhances wireless security and network flexibility on OpenWRT by utilizing multiple wireless devices and interfaces to act as an IoT firewall.
 
@@ -159,7 +159,7 @@ Creates a WPA2-protected local network named "IoT Firewall".
 
 ![image](https://github.com/user-attachments/assets/5fb44c5b-bbfb-4f39-bb49-62f63652714a)
 
-**Firewall configuration**
+#**Firewall configuration**
 
 This firewall setup secures network traffic while acting as an IoT firewall, protecting internal devices and ensuring stable connectivity.
 
@@ -199,7 +199,7 @@ Allows:
 
 ![image](https://github.com/user-attachments/assets/6a864012-9f2e-4949-bdf5-a6721ca9192c)
 
-**VPN configuration**
+#**VPN configuration**
 
 This setup integrates a VPN into OpenWRT on the Raspberry Pi 4 Model B, ensuring secure and private internet access through a customized configuration file.
 
@@ -217,6 +217,7 @@ Apply Custom VPN Settings
 Follow the instructions in raspberry_pi_nordvpn_config.txt.
 
 🛠 **Installation & Configuration**
+
 1️⃣ **Install Required Packages**
 opkg update
 opkg install luci-app-openvpn
@@ -228,7 +229,7 @@ OVPN_ID="client"
 OVPN_USER="USERNAME"
 OVPN_PASS="PASSWORD"
 
-# **Save username/password credentials**
+**Save username/password credentials**
 umask go=
 cat << EOF >${OVPN_DIR}/${OVPN_ID}.auth
 ${OVPN_USER}
@@ -236,7 +237,7 @@ ${OVPN_PASS}
 EOF
 
 3️⃣ **Configure VPN Service**
-# **Update OpenVPN configuration**
+**Update OpenVPN configuration**
 sed -i -e "
 /^auth-user-pass/s/^/#/
 /^redirect-gateway/s/^/#/
@@ -286,7 +287,7 @@ EOF
 ![image](https://github.com/user-attachments/assets/c112ebe0-4e03-4317-8bc2-b29b694fb652)
 
 
-**DNS Filtering**
+#**DNS Filtering**
 
 This setup enhances DNS security and privacy on OpenWRT by encrypting DNS queries using DNS over HTTPS (DoH), preventing eavesdropping and interception.
 
@@ -316,7 +317,7 @@ Logging: Enabled with verbosity level 1, logs stored at /var/log/https-dns-proxy
 
 ![image](https://github.com/user-attachments/assets/18d59f97-0cb0-4980-82cd-1b93b292f798)
 
-**Web filtering **
+#**Web filtering **
 This setup enhances network security and user experience on OpenWRT by blocking ads and malicious URLs, ensuring a cleaner and safer browsing environment.
 
 🛠**Key Configurations**
