@@ -95,7 +95,7 @@ Starting this section, OpenWRT is provided with a pre-configured, web-based inte
 ![image](https://github.com/user-attachments/assets/85f2c5b8-2432-42c0-b511-c3a98eddaef6)
 
 
-#**Configuration and Requirements**  
+# **Configuration and Requirements**  
 The Raspberry Pi 4 Model B was chosen for this project due to its performance and compatibility with OpenWRT.
 
 🔌 **USB Adapter Selection (RT5370 Chipset)**
@@ -108,7 +108,7 @@ During implementation, a USB adapter with the RT5370 chipset was used to enhance
 
 By leveraging the RT5370 chipset, this setup ensures stable wireless connectivity, seamless OpenWRT integration, and effective IoT firewall management.
 
-#**Network configuration**
+# **Network configuration**
 This project sets up OpenWRT on a Raspberry Pi 4 Model B for optimized network management, security, and connectivity.
 
 🔧 **Key Configurations**
@@ -159,7 +159,7 @@ Creates a WPA2-protected local network named "IoT Firewall".
 
 ![image](https://github.com/user-attachments/assets/5fb44c5b-bbfb-4f39-bb49-62f63652714a)
 
-#**Firewall configuration**
+# **Firewall configuration**
 
 This firewall setup secures network traffic while acting as an IoT firewall, protecting internal devices and ensuring stable connectivity.
 
@@ -199,7 +199,7 @@ Allows:
 
 ![image](https://github.com/user-attachments/assets/6a864012-9f2e-4949-bdf5-a6721ca9192c)
 
-#**VPN configuration**
+# **VPN configuration**
 
 This setup integrates a VPN into OpenWRT on the Raspberry Pi 4 Model B, ensuring secure and private internet access through a customized configuration file.
 
@@ -287,7 +287,7 @@ EOF
 ![image](https://github.com/user-attachments/assets/c112ebe0-4e03-4317-8bc2-b29b694fb652)
 
 
-#**DNS Filtering**
+# **DNS Filtering**
 
 This setup enhances DNS security and privacy on OpenWRT by encrypting DNS queries using DNS over HTTPS (DoH), preventing eavesdropping and interception.
 
@@ -317,7 +317,7 @@ Logging: Enabled with verbosity level 1, logs stored at /var/log/https-dns-proxy
 
 ![image](https://github.com/user-attachments/assets/18d59f97-0cb0-4980-82cd-1b93b292f798)
 
-#**Web filtering **
+# **Web filtering **
 This setup enhances network security and user experience on OpenWRT by blocking ads and malicious URLs, ensuring a cleaner and safer browsing environment.
 
 🛠**Key Configurations**
@@ -349,7 +349,7 @@ Fetch Utility: uclient-fetch – A lightweight HTTP client for updating blocklis
 
 ![image](https://github.com/user-attachments/assets/9d635fd1-662a-415c-851f-9574dca4c001)
 
-**Load Balancing configuration**
+# **Load Balancing configuration**
 This setup utilizes MWAN3 to manage multiple WAN interfaces in OpenWRT, providing load balancing and failover support for enhanced network reliability.
 
 ⚙ **Key Configurations**
