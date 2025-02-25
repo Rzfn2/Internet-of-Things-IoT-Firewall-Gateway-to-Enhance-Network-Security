@@ -116,8 +116,8 @@ This project sets up OpenWRT on a Raspberry Pi 4 Model B for optimized network m
 
 1️⃣**Core Network Settings**
 Loopback (loopback) – Assigns 127.0.0.1/8 for testing & troubleshooting.
-
 IPv6 Prefix (ula_prefix) – Uses fd83:39e6:34ea::/48 for local network communication.
+
 2️⃣ **Network Interfaces**
 Bridge (br-lan) – Combines interfaces, with eth0 as the main port.
 LAN (lan) – Configures br-lan with static IP 10.12.12.1/24 for internal networking.
@@ -191,14 +191,18 @@ LAN-to-WAN forwarding enabled, allowing internal devices to access the internet.
 4️⃣ **Essential Network Rules**
 Allows:
 
-**✅ DHCP renew
-✅ ICMP ping
-✅ IGMP (multicast)
-✅ DHCPv6 & ICMPv6 for IPv6 support
-✅ Benefits
+✅ **DHCP renew**
+
+✅ **ICMP ping**
+
+✅ **IGMP (multicast)**
+
+✅ **DHCPv6 & ICMPv6 for IPv6 support**
+
+✅ **Benefits**
 🛡️ Enhanced Security – Protects against unauthorized access.
 🚀 Stable Connectivity – Ensures reliable network operation.
-🌍 IPv6 & Multicast Support – Improves future-proofing.**
+🌍 IPv6 & Multicast Support – Improves future-proofing.
 
 
 ![image](https://github.com/user-attachments/assets/e76a813b-a1c9-4bc8-8f56-9100ded600dd)
@@ -284,7 +288,7 @@ cat << "EOF" >> /etc/sysupgrade.conf
 /etc/hotplug.d/online/00-openvpn
 EOF
 
-✅** Benefits**
+✅**Benefits**
 
 🔒 Secure & Private Internet Access
 🚀 Customizable VPN Configuration
@@ -326,20 +330,22 @@ Logging: Enabled with verbosity level 1, logs stored at /var/log/https-dns-proxy
 
 ![image](https://github.com/user-attachments/assets/18d59f97-0cb0-4980-82cd-1b93b292f798)
 
-# **Web filtering **
+# **Web filtering**
 This setup enhances network security and user experience on OpenWRT by blocking ads and malicious URLs, ensuring a cleaner and safer browsing environment.
 
 🛠**Key Configurations**
 Global Settings (global)
-Adblock Enabled: ✅ (adb_enabled '1')
-Disabled Features:
+**Adblock Enabled:** ✅ (adb_enabled '1')
+
+**Disabled Features:**
 Debugging (adb_debug '0')
 Forced DNS (adb_forcedns '0')
 SafeSearch (adb_safesearch '0')
 DNS Filter Reset (adb_dnsfilereset '0')
 Mail Reports (adb_mail '0')
 General Reporting (adb_report '0')
-Backup Enabled: ✅ (adb_backup '1') – Ensures configuration retention.
+
+**Backup Enabled:** ✅ (adb_backup '1') – Ensures configuration retention.
 
 📡 **Adblocking Sources**
 Adaway – Specializes in mobile ad blocking.
