@@ -258,7 +258,9 @@ done
 
 uci commit openvpn
 /etc/init.d/openvpn restart
+
 🔥 Firewall Configuration
+
 uci rename firewall.@zone[0]="lan"
 uci rename firewall.@zone[1]="wan"
 uci del_list firewall.wan.device="tun+"
@@ -267,15 +269,16 @@ uci commit firewall
 /etc/init.d/firewall restart
 
 🔄 **Hotplug Configuration (Ensuring VPN Restarts on Reconnection)**
-mkdir -p /etc/hotplug.d/online
 
-cat << "EOF" > /etc/hotplug.d/online/00-openvpn
-/etc/init.d/openvpn restart
-EOF
+  mkdir -p /etc/hotplug.d/online
 
-cat << "EOF" >> /etc/sysupgrade.conf
-/etc/hotplug.d/online/00-openvpn
-EOF
+  cat << "EOF" > /etc/hotplug.d/online/00-openvpn
+  /etc/init.d/openvpn restart
+  EOF
+
+  cat << "EOF" >> /etc/sysupgrade.conf
+  /etc/hotplug.d/online/00-openvpn
+  EOF
 
 ✅**Benefits**
 
