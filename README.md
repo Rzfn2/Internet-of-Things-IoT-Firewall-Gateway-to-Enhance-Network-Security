@@ -1,8 +1,4 @@
-Introduction
-
-The IoT Firewall Gateway system integrates essential parts to create a solid, functional, and effective security solution. This system possesses numerous aspects and components that can be comprehensively analyzed and discussed over.
-
-**System Functionality**
+## **System Functionality**
 
 The system's main functionality is its ability to configure and manage firewall rules. Administrators have the ability to establish network zones, make modifications to rules, and set up automatic rule enforcement on a timetable. This feature guarantees strong network security by managing traffic and blocking unauthorized access. The system's firewall setup features are enhanced by regular security audits that verify the effectiveness of the firewall rules, ensuring that the network remains secure and follows the requirements of the industry.
 
@@ -10,17 +6,17 @@ Additionally, the system provides VPN settings for enabling secure remote access
 
 Furthermore, the management of user authentication is an essential and crucial aspect of the system. This functionality enables administrators to establish and monitor user accounts, assign roles and permissions, and set authentication mechanisms. The system ensures that access to network resources is monitored and controlled by reorganizing user administration, therefore lowering the risk of unauthorized access and potential security breaches.
 
-Data Recovery and Secure Internet Utilization
+## **Data Recovery and Secure Internet Utilization**
 
 The system includes a comprehensive data recovery functionality. System configurations and data are regularly backed up in order to ensure the integrity and accessibility of the data. If there is a security breach or system failure, the recovery capability enables administrators to revert configurations and data to a previous state, reducing downtime and safeguarding important information.
 
 Moreover, the system facilitates secure internet utilization for both administrators and end-users. The system provides a secure browsing experience by utilizing established firewall rules and VPN settings to monitor and regulate all network traffic. The system records user activities to facilitate audits, thereby enhancing accountability and transparency.
 
-Security Mechanisms
+# **Security Mechanisms**
 
 The IoT Firewall Gateway solution incorporates multiple security mechanisms to ensure data integrity and protect against potential threats. Regular security audits, along with careful monitoring and logging, assist in rapidly discovering and fixing issues. The system's security has been improved by the addition of data recovery and strong authentication procedures, which ensure that it can effectively prevent and respond to security problems.
 
-
+## **📷Screenshots**
 **Interface Design (UI)**
 
 Starting this section, OpenWRT is provided with a pre-configured, web-based interface called LuCI. The researcher will use this web interface once they have installed the required LuCI packages, taking advantage of its capabilities to administer and configure the IoT firewall. LuCI provides a user-friendly interface to engage with the OpenWRT system, allowing access to a range of settings pages and critical functionality for this research. Following successfully installing LuCI, the researcher proceeded to explore many essential components of the interface, such as the Network Page, wireless Page, firewall Page, system management, VPN Page, audit Page, and management pages. These features enabled the effective setup and administration of the IoT firewall, ensuring a network environment that is both safe and dependable. This interface not only simplified the setup process but also offered multiple choices to manage network administration and security.
@@ -82,7 +78,7 @@ Starting this section, OpenWRT is provided with a pre-configured, web-based inte
 ![image](https://github.com/user-attachments/assets/85f2c5b8-2432-42c0-b511-c3a98eddaef6)
 
 
-# **Configuration and Requirements**  
+## **Configuration and Requirements**  
 The Raspberry Pi 4 Model B was chosen for this project due to its performance and compatibility with OpenWRT.
 
 🔌 **USB Adapter Selection (RT5370 Chipset)**
@@ -98,7 +94,7 @@ During implementation, a USB adapter with the RT5370 chipset was used to enhance
 
 By leveraging the RT5370 chipset, this setup ensures stable wireless connectivity, seamless OpenWRT integration, and effective IoT firewall management.
 
-# **Network configuration**
+## **Network configuration**
 This project sets up OpenWRT on a Raspberry Pi 4 Model B for optimized network management, security, and connectivity.
 
 🔧 **Key Configurations**
@@ -124,7 +120,7 @@ VPN Client (vpnclient) – Connects via tun0 to encrypt traffic and enhance secu
 
 ![image](https://github.com/user-attachments/assets/ff518605-f41c-4bb0-8877-8862420306d9)
 
-# **Wireless configuration**
+## **Wireless configuration**
 
 This setup enhances wireless security and network flexibility on OpenWRT by utilizing multiple wireless devices and interfaces to act as an IoT firewall.
 
@@ -153,7 +149,7 @@ Creates a WPA2-protected local network named "IoT Firewall".
 
 ![image](https://github.com/user-attachments/assets/5fb44c5b-bbfb-4f39-bb49-62f63652714a)
 
-# **Firewall configuration**
+## **Firewall configuration**
 
 This firewall setup secures network traffic while acting as an IoT firewall, protecting internal devices and ensuring stable connectivity.
 
@@ -199,7 +195,7 @@ Allows:
 
 ![image](https://github.com/user-attachments/assets/6a864012-9f2e-4949-bdf5-a6721ca9192c)
 
-# **VPN configuration**
+## **VPN configuration**
 
 This setup integrates a VPN into OpenWRT on the Raspberry Pi 4 Model B, ensuring secure and private internet access through a customized configuration file.
 
@@ -298,7 +294,7 @@ uci commit firewall
 ![image](https://github.com/user-attachments/assets/c112ebe0-4e03-4317-8bc2-b29b694fb652)
 
 
-# **DNS Filtering**
+## **DNS Filtering**
 
 This setup enhances DNS security and privacy on OpenWRT by encrypting DNS queries using DNS over HTTPS (DoH), preventing eavesdropping and interception.
 
@@ -329,7 +325,7 @@ Logging: Enabled with verbosity level 1, logs stored at /var/log/https-dns-proxy
 
 ![image](https://github.com/user-attachments/assets/18d59f97-0cb0-4980-82cd-1b93b292f798)
 
-# **Web filtering**
+## **Web filtering**
 This setup enhances network security and user experience on OpenWRT by blocking ads and malicious URLs, ensuring a cleaner and safer browsing environment.
 
 🛠**Key Configurations**
@@ -364,7 +360,7 @@ Fetch Utility: uclient-fetch – A lightweight HTTP client for updating blocklis
 
 ![image](https://github.com/user-attachments/assets/9d635fd1-662a-415c-851f-9574dca4c001)
 
-# **Load Balancing configuration**
+## **Load Balancing configuration**
 This setup utilizes MWAN3 to manage multiple WAN interfaces in OpenWRT, providing load balancing and failover support for enhanced network reliability.
 
 ⚙ **Key Configurations**
