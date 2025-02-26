@@ -91,7 +91,9 @@ During implementation, a USB adapter with the RT5370 chipset was used to enhance
 **Why RT5370?**
 
 ✅ Developed by Ralink Technology – Known for strong OpenWRT compatibility.
+
 ✅ Supports IEEE 802.11n – Ensures reliable and consistent wireless performance.
+
 ✅ Easy Configuration & Community Support – Well-integrated into the OpenWRT ecosystem.
 
 By leveraging the RT5370 chipset, this setup ensures stable wireless connectivity, seamless OpenWRT integration, and effective IoT firewall management.
