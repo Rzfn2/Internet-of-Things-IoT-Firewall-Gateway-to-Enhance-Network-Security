@@ -109,7 +109,7 @@ IPv6 Prefix (ula_prefix) – Uses fd83:39e6:34ea::/48 for local network communic
 
 2️⃣ **Network Interfaces**
 Bridge (br-lan) – Combines interfaces, with eth0 as the main port.
-LAN (lan) – Configures br-lan with static IP 10.12.12.1/24 for internal networking.
+LAN (lan) – Configures br-lan with static IP 10.0.0.1/24 for internal networking.
 Wireless WAN (wwan) – Operates in DHCP mode for dynamic IP allocation.
 
 3️⃣ **DNS & VPN**
@@ -206,38 +206,47 @@ This setup integrates a VPN into OpenWRT on the Raspberry Pi 4 Model B, ensuring
 📌 **Key Configurations**
 
 Custom VPN Configuration (custom_config)
-Uses /etc/openvpn/my-vpn.conf for custom VPN settings.
+Uses 
+```
+cd /etc/openvpn/my-vpn.conf for custom VPN settings.
+```
 Disabled by default (option enabled '0') for flexibility in customization.
 VPN Setup Requirements
 Download the NordVPN Configuration File
 Choose a server from: [NordVPN Server Tool](https://nordvpn.com/servers/tools/)
 Upload the Config File to Raspberry Pi
-scp your_file_name_here root@10.71.71.1:/etc/openvpn/client.conf
+```
+scp your_file_name_here root@you_IP:/etc/openvpn/client.conf
+```
 Apply Custom VPN Settings
 Follow the instructions in raspberry_pi_nordvpn_config.txt.
 
 🛠 **Installation & Configuration**
 
 1️⃣ **Install Required Packages**
+```
 opkg update
 opkg install luci-app-openvpn
 /etc/init.d/rpcd restart
-
+```
 2️⃣ **Configure VPN Parameters**
+```
 OVPN_DIR="/etc/openvpn"
 OVPN_ID="client"
 OVPN_USER="USERNAME"
 OVPN_PASS="PASSWORD"
-
+```
 **Save username/password credentials**
+```
 umask go=
 cat << EOF >${OVPN_DIR}/${OVPN_ID}.auth
 ${OVPN_USER}
 ${OVPN_PASS}
 EOF
-
+```
 3️⃣ **Configure VPN Service**
 **Update OpenVPN configuration**
+```
 sed -i -e "
 /^auth-user-pass/s/^/#/
 /^redirect-gateway/s/^/#/
@@ -245,8 +254,9 @@ sed -i -e "
 \$a redirect-gateway def1 ipv6
 " ${OVPN_DIR}/${OVPN_ID}.conf
 /etc/init.d/openvpn restart
-
+```
 4️⃣ **Enable VPN Instance Management**
+```
 ls /etc/openvpn/*.conf | while read -r OVPN_CONF
 do
   OVPN_ID="$(basename ${OVPN_CONF%.*} | sed -e "s/\W/_/g")"
@@ -255,31 +265,28 @@ do
   uci set openvpn.${OVPN_ID}.enabled="1"
   uci set openvpn.${OVPN_ID}.config="${OVPN_CONF}"
 done
-
 uci commit openvpn
 /etc/init.d/openvpn restart
-
+```
 🔥 Firewall Configuration
-
+```
 uci rename firewall.@zone[0]="lan"
 uci rename firewall.@zone[1]="wan"
 uci del_list firewall.wan.device="tun+"
 uci add_list firewall.wan.device="tun+"
 uci commit firewall
 /etc/init.d/firewall restart
-
+```
 🔄 **Hotplug Configuration (Ensuring VPN Restarts on Reconnection)**
-
+```
   mkdir -p /etc/hotplug.d/online
-
   cat << "EOF" > /etc/hotplug.d/online/00-openvpn
   /etc/init.d/openvpn restart
   EOF
-
   cat << "EOF" >> /etc/sysupgrade.conf
   /etc/hotplug.d/online/00-openvpn
   EOF
-
+```
 ✅**Benefits**
 
 🔒 Secure & Private Internet Access
