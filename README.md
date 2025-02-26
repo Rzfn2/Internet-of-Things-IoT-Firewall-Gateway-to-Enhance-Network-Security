@@ -20,19 +20,6 @@ Security Mechanisms
 
 The IoT Firewall Gateway solution incorporates multiple security mechanisms to ensure data integrity and protect against potential threats. Regular security audits, along with careful monitoring and logging, assist in rapidly discovering and fixing issues. The system's security has been improved by the addition of data recovery and strong authentication procedures, which ensure that it can effectively prevent and respond to security problems.
 
-**System Design**
-
-![image](https://github.com/user-attachments/assets/1bb23309-11f2-4de5-8fde-5c1b11d151c9)
-
-
-**Use-Case Diagram**
-
-![image](https://github.com/user-attachments/assets/796316ed-83c6-40c7-83d0-f2c845ffd208)
-
-
-**Activity diagram**
-
-![image](https://github.com/user-attachments/assets/50540a48-f6fc-4d5a-a541-b659635f0d38)
 
 **Interface Design (UI)**
 
