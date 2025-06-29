@@ -383,3 +383,9 @@ Tracking IPs:
 🔗 Improved Network Stability – Tracks multiple ISPs for redundancy.
 
 ![image](https://github.com/user-attachments/assets/23de373f-228d-4236-b86b-07deb89ed44b)
+
+## 👨‍💻 Author
+
+Made by [Abdullah Banwair](https://github.com/Rzfn2) — feel free to reach out!
+
+Suggestions, contributions, and pull requests are welcome!
